@@ -20,10 +20,16 @@ cmake \
     -DZLIB_ROOT=$PREFIX \
 	.
 make
+
 # patch taglib.cp (missing -lz flag)
-sed -i 's/-ltag/-ltag -lz/g' taglib.pc
+# issue with sed on macos - requires an extra parameter
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i '' 's/-ltag/-ltag -lz/g' taglib.pc
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  sed -i 's/-ltag/-ltag -lz/g' taglib.pc
+fi
+
 make install
 
 cd ../..
 rm -r tmp
-
