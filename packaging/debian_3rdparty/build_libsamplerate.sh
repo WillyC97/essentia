@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building libsamplerate $LIBSAMPLERATE_VERSION"
+print_banner "Building libsamplerate $LIBSAMPLERATE_VERSION"
 
 curl -SLO http://www.mega-nerd.com/SRC/$LIBSAMPLERATE_VERSION.tar.gz
 tar -xf $LIBSAMPLERATE_VERSION.tar.gz
@@ -21,3 +21,5 @@ make install
 
 cd ../..
 rm -r tmp
+
+print_banner "libsamplerate build Successful"

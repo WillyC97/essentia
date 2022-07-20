@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building fftw $FFTW_VERSION"
+print_banner "Building fftw $FFTW_VERSION"
 
 curl -SLO http://www.fftw.org/$FFTW_VERSION.tar.gz
 tar -xf $FFTW_VERSION.tar.gz
@@ -21,3 +21,5 @@ make install
 
 cd ../..
 rm -r tmp
+
+print_banner "fftw build Successful"

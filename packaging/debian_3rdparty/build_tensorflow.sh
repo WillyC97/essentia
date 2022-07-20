@@ -8,7 +8,7 @@ mkdir tmp
 cd tmp
 
 
-echo "Building Tensorflow $TENSORFLOW_VERSION"
+print_banner "Building Tensorflow $TENSORFLOW_VERSION"
 
 curl -SLO https://github.com/tensorflow/tensorflow/archive/v$TENSORFLOW_VERSION.tar.gz
 tar -xf v$TENSORFLOW_VERSION.tar.gz
@@ -34,3 +34,5 @@ rm -rf /root/.cache/bazel*
 
 cd ../..
 rm -r tmp
+
+print_banner "tensorflow build Successful"

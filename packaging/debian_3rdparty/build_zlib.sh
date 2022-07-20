@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building zlib $ZLIB_VERSION"
+print_banner "Building zlib $ZLIB_VERSION"
 
 curl -SLO https://zlib.net/$ZLIB_VERSION.tar.gz
 tar -xf $ZLIB_VERSION.tar.gz
@@ -22,3 +22,4 @@ make install
 cd ../..
 rm -r tmp
 
+print_banner "zlib build Successful"

@@ -1,4 +1,6 @@
 #!/bin/sh
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+. $SCRIPT_DIR/print_utils.sh
 
 HOST=i686-w64-mingw32
 if [ -z "${PREFIX}" ]; then

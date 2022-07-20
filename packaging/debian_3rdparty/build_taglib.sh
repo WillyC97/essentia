@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building taglib $TAGLIB_VERSION"
+print_banner "Building taglib $TAGLIB_VERSION"
 
 curl -SLO http://taglib.github.io/releases/$TAGLIB_VERSION.tar.gz
 tar -xf $TAGLIB_VERSION.tar.gz
@@ -33,3 +33,5 @@ make install
 
 cd ../..
 rm -r tmp
+
+print_banner "taglib build Successful"

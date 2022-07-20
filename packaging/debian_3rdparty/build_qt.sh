@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building qt from $QT_SOURCE_URL"
+print_banner "Building qt from $QT_SOURCE_URL"
 
 QT_FILE=${QT_SOURCE_URL##*/}
 
@@ -22,3 +22,5 @@ make install
 
 cd ../..
 rm -fr tmp
+
+print_banner "qt build Successful"

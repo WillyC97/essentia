@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building gaia $GAIA_VERSION"
+print_banner "Building gaia $GAIA_VERSION"
 
 curl -SLO https://github.com/MTG/gaia/archive/v$GAIA_VERSION.tar.gz
 tar -xf v$GAIA_VERSION.tar.gz
@@ -18,3 +18,5 @@ python3 ./waf install
 
 cd ../..
 rm -rf tmp
+
+print_banner "gaia build Successful"

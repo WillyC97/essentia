@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Installing headers for Eigen $EIGEN_VERSION"
+print_banner "Installing headers for Eigen $EIGEN_VERSION"
 
 curl -SLO https://gitlab.com/libeigen/eigen/-/archive/$EIGEN_VERSION/eigen-$EIGEN_VERSION.tar.gz
 tar -xf eigen-$EIGEN_VERSION.tar.gz
@@ -22,3 +22,5 @@ cp "$PREFIX"/share/pkgconfig/eigen3.pc "$PREFIX"/lib/pkgconfig/
 
 cd ../../..
 rm -rf tmp
+
+print_banner "Eigen build Successful"

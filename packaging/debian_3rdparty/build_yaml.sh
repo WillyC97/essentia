@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building libyaml $LIBYAML_VERSION"
+print_banner "Building libyaml $LIBYAML_VERSION"
 
 curl -SLO http://pyyaml.org/download/libyaml/$LIBYAML_VERSION.tar.gz
 tar -xf $LIBYAML_VERSION.tar.gz
@@ -21,3 +21,5 @@ make install
 
 cd ../..
 rm -r tmp
+
+print_banner "yaml build Successful"

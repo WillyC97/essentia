@@ -6,7 +6,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 
-echo "Building chromaprint $CHROMAPRINT_VERSION"
+print_banner "Building chromaprint $CHROMAPRINT_VERSION"
 
 curl -SLO https://github.com/acoustid/chromaprint/releases/download/v$CHROMAPRINT_VERSION/chromaprint-$CHROMAPRINT_VERSION.tar.gz
 tar -xf chromaprint-$CHROMAPRINT_VERSION.tar.gz
@@ -32,3 +32,5 @@ rm -r tmp
 
 # patch libchromaprint.pc to add a missing link flag for fftw3f
 sed -i -e 's/-lchromaprint/-lchromaprint -lfftw3f/g' "${PREFIX}"/lib/pkgconfig/libchromaprint.pc
+
+print_banner "Chromaprint build Successful"

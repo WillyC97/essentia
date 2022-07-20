@@ -2,7 +2,7 @@
 set -e
 . ../build_config.sh
 
-echo "Building FFmpeg $FFMPEG_VERSION"
+print_banner "Building FFmpeg $FFMPEG_VERSION"
 
 mux=$1
 if test "$1" = "--no-muxers"; then
@@ -31,3 +31,5 @@ make install
 
 cd ../..
 rm -r tmp
+
+print_banner "ffmpeg build Successful"
