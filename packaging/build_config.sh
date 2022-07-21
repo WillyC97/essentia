@@ -18,8 +18,13 @@ SHARED_OR_STATIC="
 --enable-static
 "
 
+# ffmpeg 2.8 causes issues on linux and 4.1 causes issues on mac...
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+      FFMPEG_VERSION=ffmpeg-4.1
+else
+      FFMPEG_VERSION=ffmpeg-2.8.12
+fi
 EIGEN_VERSION=3.3.7
-FFMPEG_VERSION=ffmpeg-4.1
 LAME_VERSION=3.100
 TAGLIB_VERSION=taglib-1.11.1
 ZLIB_VERSION=zlib-1.2.12
