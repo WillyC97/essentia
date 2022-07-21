@@ -19,7 +19,7 @@ SHARED_OR_STATIC="
 "
 
 EIGEN_VERSION=3.3.7
-FFMPEG_VERSION=ffmpeg-2.8.12
+FFMPEG_VERSION=ffmpeg-4.1
 LAME_VERSION=3.100
 TAGLIB_VERSION=taglib-1.11.1
 ZLIB_VERSION=zlib-1.2.12
@@ -60,7 +60,6 @@ FFMPEG_AUDIO_FLAGS="
     --enable-protocol=file
     --enable-protocol=pipe
 
-    --disable-sdl
     --disable-lzma
     --disable-zlib
     --disable-xlib
@@ -214,7 +213,6 @@ FFMPEG_AUDIO_FLAGS_MUXERS="
 # see http://www.fftw.org/install/windows.html
 FFTW_FLAGS="
     --enable-float \
-    --enable-sse2 \
     --with-incoming-stack-boundary=2 \
     --with-our-malloc16
 "
